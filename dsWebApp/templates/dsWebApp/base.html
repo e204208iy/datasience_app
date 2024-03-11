@@ -1,0 +1,32 @@
+{% load static %}
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>久留米工業大学データサイエンス部</title>
+  <link rel="stylesheet" href='{% static "dsWebApp/css/styles.css" %}'/> 
+</head>
+<body>
+  <header>
+    <h1>
+        久留米工業大学　DS部
+    </h1>
+    <nav>
+        <ul>
+            <li><a href="#">Competitions</a></li>
+            <li><a href="#">SERVICE</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </nav>
+  </header>
+  <div class="compe-tabs">
+    <a href="{% url 'dswebapp:overview' %}">コンペ概要</a>
+    <a href="{% url 'dswebapp:compedata' %}">データ</a>
+    <a href="{% url 'dswebapp:ranking' %}">ランキング</a>
+    <a href="{% url 'dswebapp:postresult' %}">結果を投稿</a>
+  </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

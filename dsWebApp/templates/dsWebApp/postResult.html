@@ -1,0 +1,12 @@
+{% extends 'dsWebApp/base.html' %}
+{% block content %}
+
+<div class="postresult">
+    <h1>結果を投稿してください。</h1>
+    <form action="{% url 'dswebapp:file_upload' %}" method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="csv">
+        <button type="submit">送信</button>
+      </form>
+</div>
+{% endblock %}
